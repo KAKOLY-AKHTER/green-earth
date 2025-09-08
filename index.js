@@ -6,11 +6,22 @@ const cartList = document.getElementById('cart-list');
 const totalPrice = document.getElementById('total-price');
 const treeDetailsModal = document.getElementById('trees-details-modal');
 //  console.log(treeDetailsModal);
-const modalContainer = document.getElementById('modalContainer')
+const modalContainer = document.getElementById('modalContainer');
+
 
 let cart = [];
 let total = 0;
 
+const manageSpinner = (status) => {
+  if (status === true) {
+    // document.getElementById("spinner").classList.remove("hidden");
+     document.getElementById("spinner").classList.add("flex");
+    // document.getElementById("tree-section").classList.add("hidden");
+  } else {
+    // document.getElementById("tree-section").classList.remove("hidden");
+    // document.getElementById("spinner").classList.add("hidden");
+  }
+};
 
 
 const loadCategory = () => {
@@ -62,6 +73,7 @@ const setActiveCategory = (active) => {
 
 
 const loadAllTrees = () => {
+  manageSpinner(true)
 
 
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -77,12 +89,15 @@ const loadAllTrees = () => {
     })
    .catch(err => {
       console.log(err);
-      
+     
     });
+
+     manageSpinner(false)
 };
 
 //  Load Trees by Category
 const loadTreesCategory = (treesId) => {
+  manageSpinner(true)
 
 
   fetch(`https://openapi.programming-hero.com/api/category/${treesId}`)
@@ -96,6 +111,7 @@ const loadTreesCategory = (treesId) => {
   
 
     });
+    manageSpinner(false)
 };
 //   Show Tree Cards
 const showTrees = (plants) => {
@@ -135,6 +151,7 @@ treeSection.addEventListener("click", (e) => {
     const id = parent.id;
     console.log(id);
     if(id){
+      manageSpinner(true)
 
 fetch(`https://openapi.programming-hero.com/api/category/${id}`)
 
@@ -147,9 +164,10 @@ fetch(`https://openapi.programming-hero.com/api/category/${id}`)
       })
       .catch(err => {
     console.log( err);
+
   });
 
-      
+          manageSpinner(false)
   }
 }
 });
