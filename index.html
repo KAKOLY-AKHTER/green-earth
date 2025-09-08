@@ -49,13 +49,13 @@
             <div class="hero bg-[#CFF0DC] ">
 
 
-                <div class="hero-content text-center">
+                <div class=" text-center lg:flex  mx-auto max-w-7xl sm:flex-row justify-center items-center ">
                     <div>
-                        <img src="./B12A06-Green-Earth/assets/hero-leaf1.png" alt="">
+                        <img class="w-full" src="./B12A06-Green-Earth/assets/hero-leaf1.png" alt="">
                     </div>
 
-                    <div class="max-w-md space-y-2">
-                        <h1 class="lg:text-3xl font-bold font-lg">Plant a Tree, Grow a Future</h1>
+                    <div class="max-w-md mt-5">
+                        <h1 class="lg:text-3xl font-bold font-2xl">Plant a Tree, Grow a Future</h1>
                         <small class="">
                             Join our mission to plant 1 million trees and make the Earth greener for future generations.
                         </small> <br>
@@ -65,7 +65,7 @@
                             Involved</button>
                     </div>
                     <div>
-                        <img src="./B12A06-Green-Earth/assets/hero-leaf2.png" alt="">
+                        <img class="w-full" src="./B12A06-Green-Earth/assets/hero-leaf2.png" alt="">
                     </div>
 
                 </div>
@@ -81,38 +81,43 @@
             <!-- .........category part.......................... -->
 
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[200px_1fr_200px] gap-6 mt-10">
+                <div id="spinner" class="text-center my-6 hidden">
+                    <span class="loading loading-spinner text-success loading-lg"></span>
+                </div>
                 <aside class="bg-green-50  rounded w-full md:w-[200px]">
-                    <h2 class="text-lg font-bold">Categories</h2>
-                    <ul id="category-section" class="flex  flex-col cursor-pointer gap-2 ">
+                <h2 class="text-lg font-bold">Categories</h2>
+                <ul id="category-section" class="flex  flex-col cursor-pointer gap-2 ">
 
-                    </ul>
-                </aside>
-
-
-
-                <div id="tree-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                </ul>
+            </aside>
 
 
-                <aside class="bg-green-100 p-4 rounded shadow-md">
-                    <h2 class="text-xl font-bold mb-2">Your Cart</h2>
-                    <ul id="cart-list" class="space-y-2"></ul>
-                    <p class="mt-4 font-bold">Total: ৳<span id="total-price">0</span></p>
-                </aside>
+
+            <div id="tree-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+
+            <aside class="bg-green-100 p-4 rounded shadow-md">
+                <h2 class="text-xl font-bold mb-2">Your Cart</h2>
+                <ul id="cart-list" class="space-y-2"></ul>
+                <p class="mt-4 font-bold">Total: ৳<span id="total-price">0</span></p>
+            </aside>
 
 
             </div>
 
-<div id="spinner" class="text-center py-10 hidden">
-  <span class="loading loading-spinner loading-lg text-green-600"></span>
-</div>
+            </div>
             
+
+
+
+
         </section>
 
 
 
         <!-- .................About the Campaign.......... -->
 
-        <section hidden class="bg-[#f0fdf4] pt-10 pb-10 ">
+        <section class="bg-[#f0fdf4] pt-10 pb-10 ">
             <div>
                 <h1 class="text-center font-bold text-2xl">About the Campaign</h1>
             </div>
@@ -145,7 +150,7 @@
 
         <!-- ....................our impact....................... -->
 
-        <section hidden class="bg-[#CFF0DC] py-10 ">
+        <section class="bg-[#CFF0DC] py-10 ">
             <h1 class="font-bold text-2xl text-center mb-7">Our Impact</h1>
 
 
@@ -181,7 +186,7 @@
 
 
     </main>
-    <footer hidden>
+    <footer>
 
         <section class="bg-[#166534] pt-10">
             <h1 class="text-center text-white font-bold text-xl mb-5">Plant a Tree Today</h1>
@@ -221,6 +226,21 @@
 
 
         </section>
+
+
+
+    
+  <dialog id="trees-details-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="modalContainer" class="space-y-5"></div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
     </footer>
 
     <script src="./index.js"></script>
