@@ -11,9 +11,11 @@ answer: From my understanding, var is function-scoped and allows re-declaration,
 
 answer: These three methods are super useful when working with arrays. I use forEach() when I just want to loop through items and perform actions like logging—since it doesn’t return anything. map() is great when I want to transform each item and get a new array. And filter() helps me pick out only the items that meet a certain condition.
  So basically:
-- `forEach()` → for running side effects like logging
-- `map()` → for transforming each item and returning a new array
-- `filter()` → for selecting items based on a condition
+ 
+- forEach() → for running side effects like logging
+- map() → for transforming each item and returning a new array
+- filter() → for selecting items based on a condition
+
 
 
 
