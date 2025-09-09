@@ -121,13 +121,10 @@ treeSection.addEventListener("click", (e) => {
     console.log(id);
     if (id) {
       manageSpinner(true);
-      fetch(`https://openapi.programming-hero.com/api/category/${id}`)
-      // fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+      fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
         .then((res) => res.json())
         .then((data) => {
-          const plant = data.plants[0]; 
-                // showDetails(data.plant);
-          showDetails(plant);
+         showDetails(data.plants);
           manageSpinner(false);
         })
         .catch((err) => {
