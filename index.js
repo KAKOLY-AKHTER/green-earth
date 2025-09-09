@@ -175,10 +175,10 @@ const showDetails = (data) => {
   
   <img src=${data.image} class="w-full h-60 object-cover rounded mb-3" />
     <h3 class="text-lg font-bold mb-2 cursor-pointer hover:text-sky-600">${data.name}</h3>
-    <p class="text-gray-700">${data.description}</p>
+    <p class="text-gray-700"><span class="font-bold">description : </span>${data.description}</p>
     <div class="mt-2 flex justify-between">
-      <span class="bg-green-100 text-green-800 px-3 py-1 rounded">${data.category}</span>
-      <span class="font-bold text-lg">৳${data.price}</span>
+      <span class="bg-green-100 text-green-800 px-3 py-1 rounded"><span class="font-bold">category :</span> ${data.category}</span>
+      <span class="font-bold text-lg">price : ${data.price}৳</span>
     </div>
   </div>
  

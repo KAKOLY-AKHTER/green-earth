@@ -31,7 +31,7 @@ answer:
 Destructuring lets me extract values from arrays or objects and assign them to variables in a neat, readable way. It saves me from writing repetitive code and makes things more elegant. 
 
 For example:
-- const [x, y] = [10, 20];
+-const [x, y] = [10, 20];
 - const { name, age } = { name: "Sara", age: 30 };
 
 
