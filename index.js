@@ -191,8 +191,9 @@ const showDetails = (data) => {
 const handleCartDelete = (itemId) => {
 
   cart = cart.filter((item) => item.id !== itemId);
-
  total = cart.reduce((acc, item) => acc + item.price, 0);
+
+
   showCartItems(cart);
 
 };
