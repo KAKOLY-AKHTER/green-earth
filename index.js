@@ -30,7 +30,7 @@ const showCategory = (categories) => {
 
   const allBtn = document.createElement("li");
   allBtn.textContent = "All Trees";
-  allBtn.className = "px-3 py-2 rounded hover:bg-green-200 ";
+  allBtn.className = "px-3 py-2 rounded hover:bg-green-200 cursor-pointer ";
   allBtn.onclick = () => {
     loadAllTrees();
     setActiveCategory(allBtn);
@@ -40,7 +40,7 @@ const showCategory = (categories) => {
   categories.forEach((cat) => {
     const li = document.createElement("li");
     li.textContent = cat.category_name;
-    li.className = "px-3 py-2 rounded hover:bg-green-200 ";
+    li.className = "px-3 py-2 rounded hover:bg-green-200 cursor-pointer";
     li.setAttribute("data-id", cat.id);
     li.onclick = () => {
       loadTreesCategory(cat.id);
@@ -94,9 +94,9 @@ const showTrees = (plants) => {
     card.setAttribute("id", tree.id);
     card.innerHTML = `
          <img src="${tree.image}" class="rounded mb-2 h-40 w-full object-cover" />
-      <h3 class="text-lg font-bold">${tree.name}</h3>
+      <h3 class="text-lg font-bold  cursor-pointer">${tree.name}</h3>
       <small class="">${tree.description.slice(0, 60)}...</small>
-      <div class="flex justify-between"><p class="text-sm text-green-700 font-semibold px-4 py-1 rounded-xl bg-sky-100 ">${
+      <div class="flex justify-between mt-2"><p class="text-sm text-green-700 font-semibold px-4 py-1 rounded-xl bg-sky-100 ">${
         tree.category
       }</p>
       <p class="font-bold">৳${tree.price}</p></div>
@@ -113,19 +113,20 @@ treeSection.addEventListener("click", (e) => {
   }
 
   if (e.target.tagName === "H3") {
-    console.log("h33");
 
     const parent = e.target.closest(".card");
-    console.log(parent);
+    // console.log(parent);
 
     const id = parent.id;
     console.log(id);
     if (id) {
       manageSpinner(true);
       fetch(`https://openapi.programming-hero.com/api/category/${id}`)
+      // fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
         .then((res) => res.json())
         .then((data) => {
-          const plant = data.plants[0]; // pick first plant
+          const plant = data.plants[0]; 
+                // showDetails(data.plant);
           showDetails(plant);
           manageSpinner(false);
         })
@@ -177,7 +178,7 @@ const showDetails = (data) => {
   
   <img src=${data.image} class="w-full h-60 object-cover rounded mb-3" />
     <h3 class="text-lg font-bold mb-2 cursor-pointer hover:underline">${data.name}</h3>
-    <p class="text-gray-700">${data.description.slice(0, 60)}....</p>
+    <p class="text-gray-700">${data.description}</p>
     <div class="mt-2 flex justify-between">
       <span class="bg-green-100 text-green-800 px-3 py-1 rounded">${data.category}</span>
       <span class="font-bold text-lg">৳${data.price}</span>
@@ -191,14 +192,11 @@ const showDetails = (data) => {
 };
 
 const handleCartDelete = (itemId) => {
-  console.log("Trying to delete:", itemId);
 
   cart = cart.filter((item) => item.id !== itemId);
 
-  total = 0;
-  cart.forEach((item) => {
-    total += item.price;
-  });
+ total = cart.reduce((acc, item) => acc + item.price, 0);
+  showCartItems(cart);
 
   showCartItems(cart);
 };
