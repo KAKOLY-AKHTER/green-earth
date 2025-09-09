@@ -73,6 +73,9 @@
     <section class=" bg-[#f0fdf4] p-3">
 
       <h1 class="text-3xl font-bold text-center">Choose Your Trees</h1>
+      <div id="loading-spinner" class="min-w-full col-span-6">
+          <span class="loading loading-spinner loading-xl text-info"></span>
+        </div>
       <div class="max-w-7xl mx-auto flex  flex-col md:flex-row  gap-6 mt-10 ">
 
         <div class="bg-green-50 rounded w-full md:w-[250px] col-span-2 p-3">
@@ -81,9 +84,7 @@
         </div>
 
         <div id="tree-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 col-span-8"></div>
-        <div id="loading-spinner" class="min-w-full col-span-6">
-          <span class="loading loading-spinner loading-xl text-info"></span>
-        </div>
+        
 
         <div class=" bg-white  p-4 rounded shadow-md  md:w-[300px] w-full">
           <h2 class="text-xl font-bold mb-2">Your Cart</h2>
