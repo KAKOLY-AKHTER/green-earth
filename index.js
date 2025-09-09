@@ -173,7 +173,7 @@ const showDetails = (data) => {
   
   modalContainer.innerHTML = `
 
-  <div class=""bg-white card shadow-md p-4 w-[1000px] rounded-lg h-fit"">
+  <div class="bg-white card shadow-md p-4 rounded-lg h-fit">
   
   <img src=${data.image} class="w-full h-60 object-cover rounded mb-3" />
     <h3 class="text-lg font-bold mb-2 cursor-pointer hover:underline">${data.name}</h3>
