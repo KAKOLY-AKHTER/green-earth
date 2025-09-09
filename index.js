@@ -154,7 +154,7 @@ const showCartItems = (cartItems) => {
   cartList.innerHTML = "";
   cartItems.forEach((item) => {
     cartList.innerHTML += `
-    <li class=" my-2 p-2 flex justify-between items-center shadow-lg bg-slate-100 rounded-lg">
+    <li class=" my-2 p-2 flex justify-between items-center shadow-lg bg-green-100 rounded-lg">
       <div class="">
 
       <h1 class="">${item.title}</h1>

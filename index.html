@@ -70,29 +70,34 @@
 
     <!-- ......................category part................... -->
 
-    <section class="hero bg-[#f0fdf4] p-3">
+    <section class=" bg-[#f0fdf4] p-3">
 
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row  gap-6 mt-10 ">
-        <aside class="bg-green-50 rounded w-full md:w-[250px] col-span-2 p-3">
+      <h1 class="text-3xl font-bold text-center">Choose Your Trees</h1>
+      <div class="max-w-7xl mx-auto flex  flex-col md:flex-row  gap-6 mt-10 ">
+
+        <div class="bg-green-50 rounded w-full md:w-[250px] col-span-2 p-3">
           <h2 class="text-2xl font-bold pb-5">Categories</h2>
           <ul id="category-section" class="flex flex-col cursor-pointer gap-2"></ul>
-        </aside>
+        </div>
 
         <div id="tree-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 col-span-8"></div>
         <div id="loading-spinner" class="min-w-full col-span-6">
           <span class="loading loading-spinner loading-xl text-info"></span>
         </div>
 
-        <aside class="bg-green-100 p-4 rounded shadow-md  md:w-[300px] w-full">
+        <div class=" bg-white  p-4 rounded shadow-md  md:w-[300px] w-full">
           <h2 class="text-xl font-bold mb-2">Your Cart</h2>
           <ul id="cart-list" class="space-y-2"></ul>
           <div class="flex justify-between items-center mt-3">
             <p class="font-bold">Total:</p>
             <p class="font-bold"> ৳<span id="total-price">0</span></p>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
+
+
+
 
     <!-- .................About the Campaign.......... -->
 
