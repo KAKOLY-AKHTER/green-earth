@@ -174,7 +174,7 @@ const showDetails = (data) => {
   <div class="bg-white card shadow-md p-4 rounded-lg h-fit">
   
   <img src=${data.image} class="w-full h-60 object-cover rounded mb-3" />
-    <h3 class="text-lg font-bold mb-2 cursor-pointer hover:underline">${data.name}</h3>
+    <h3 class="text-lg font-bold mb-2 cursor-pointer hover:text-sky-600">${data.name}</h3>
     <p class="text-gray-700">${data.description}</p>
     <div class="mt-2 flex justify-between">
       <span class="bg-green-100 text-green-800 px-3 py-1 rounded">${data.category}</span>
