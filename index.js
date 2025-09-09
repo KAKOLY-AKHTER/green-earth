@@ -195,7 +195,6 @@ const handleCartDelete = (itemId) => {
  total = cart.reduce((acc, item) => acc + item.price, 0);
   showCartItems(cart);
 
-  showCartItems(cart);
 };
 
 const manageSpinner = (state) => {
